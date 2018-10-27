@@ -1,0 +1,44 @@
+﻿@using RetreieveImage.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowData</title>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            
+        </tr>
+        @foreach (Product product in Model)
+        {
+        <table>
+            <tr>
+                <td>
+                    <img alt="@product.Id" height="100" width="100" src="data:image/jpg;base64,@Convert.ToBase64String(product.P_Image)" />
+                </td>
+                <br />
+                <td>
+                    @product.Name
+                </td>
+
+                <br />
+                <td>
+                    @product.Price
+                </td>
+                <br />
+                <td>
+                    @product.P_Description
+                </td>
+                    <br />
+            </tr>
+        </table>
+        }
+    </table>
+</body>
+</html>
